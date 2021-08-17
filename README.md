@@ -106,7 +106,7 @@ simpleCUBLAS test passed (result not checked).
 
 ### Cranium
 
-- 2080 Super, 8GB
+- 2060 Super, 8GB
 - GCC 7.3
 - CUDA 11.4 - CUDA 11.1 reported `nvcc fatal   : Unknown option '--threads'`
 
