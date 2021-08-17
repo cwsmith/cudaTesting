@@ -63,6 +63,46 @@ cublasSgemm time (seconds) 61.422657
 simpleCUBLAS test passed (result not checked).
 ```
 
+V100, 32GB
+GCC 8.4.1
+CUDA 11.1
+
+```
+$ module load gcc/8.4.1 spectrum-mpi/10.4 cuda/11.2
+$ make SMS=70 HOST_COMPILER=g++
+$ for i in 10 11 12 13 14; do ./simpleCUBLAS $((2**i)); done                                                                                                           
+matrix size 1048576
+GPU Device 0: "Volta" with compute capability 7.0
+
+simpleCUBLAS test running..
+cublasSgemm time (seconds) 0.022997
+simpleCUBLAS test passed.
+matrix size 4194304
+GPU Device 0: "Volta" with compute capability 7.0
+
+simpleCUBLAS test running..
+ cublasSgemm time (seconds) 0.137055
+simpleCUBLAS test passed (result not checked).
+matrix size 16777216
+GPU Device 0: "Volta" with compute capability 7.0
+
+simpleCUBLAS test running..
+cublasSgemm time (seconds) 0.980725
+simpleCUBLAS test passed (result not checked).
+matrix size 67108864
+GPU Device 0: "Volta" with compute capability 7.0
+
+simpleCUBLAS test running..
+cublasSgemm time (seconds) 7.476899
+simpleCUBLAS test passed (result not checked).
+matrix size 268435456
+GPU Device 0: "Volta" with compute capability 7.0
+
+simpleCUBLAS test running..
+cublasSgemm time (seconds) 60.654473
+simpleCUBLAS test passed (result not checked).
+```
+
 ### Cranium
 
 2080 Super, 8GB
