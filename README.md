@@ -3,6 +3,7 @@
 - Makefile - a makefile; nothing more, nothing less
 - README.md - this file
 - simpleCUBLAS.cpp - test code, adapted from https://github.com/NVIDIA/cuda-samples.git @ 3342d60
+- helper_\*.h - headers with helper functions 
 
 ## compile
 
