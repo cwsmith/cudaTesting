@@ -23,9 +23,9 @@ for i in 10 11 12 13 14; do ./simpleCUBLAS $((2**i)); done
 
 ### AiMOS
 
-V100, 32GB
-xl_r 16.1.1
-CUDA 11.1
+- V100, 32GB
+- xl_r 16.1.1
+- CUDA 11.1
 
 ```
 $ module load xl_r/16.1.1 spectrum-mpi/10.4 cuda/11.2
@@ -64,9 +64,9 @@ cublasSgemm time (seconds) 61.422657
 simpleCUBLAS test passed (result not checked).
 ```
 
-V100, 32GB
-GCC 8.4.1
-CUDA 11.1
+- V100, 32GB
+- GCC 8.4.1
+- CUDA 11.1
 
 ```
 $ module load gcc/8.4.1 spectrum-mpi/10.4 cuda/11.2
@@ -106,9 +106,9 @@ simpleCUBLAS test passed (result not checked).
 
 ### Cranium
 
-2080 Super, 8GB
-GCC 7.3
-CUDA 11.4 - CUDA 11.1 reported `nvcc fatal   : Unknown option '--threads'`
+- 2080 Super, 8GB
+- GCC 7.3
+- CUDA 11.4 - CUDA 11.1 reported `nvcc fatal   : Unknown option '--threads'`
 
 ```
 $ module load gcc/7.3.0-bt47fwr cuda/11.4
