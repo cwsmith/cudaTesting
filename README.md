@@ -23,6 +23,7 @@ for i in 10 11 12 13 14; do ./simpleCUBLAS $((2**i)); done
 
 ### AiMOS
 
+- Rhel8
 - V100, 32GB
 - xl_r 16.1.1
 - CUDA 11.1
@@ -64,6 +65,7 @@ cublasSgemm time (seconds) 61.422657
 simpleCUBLAS test passed (result not checked).
 ```
 
+- Rhel8
 - V100, 32GB
 - GCC 8.4.1
 - CUDA 11.1
@@ -103,6 +105,55 @@ simpleCUBLAS test running..
 cublasSgemm time (seconds) 60.654473
 simpleCUBLAS test passed (result not checked).
 ```
+
+### Summit 
+
+- Rhel8
+- V100, 16GB
+- xl_r 16.1.1-10
+- CUDA 11.4.0 (CUDA 11.1 reported `nvcc fatal   : Unknown option '--threads'`)
+
+```
+$module load cuda/11.4.0
+$export CUDA_PATH=$CUDA_DIR
+$make SMS=70 HOST_COMPILER=xlc++_r
+#edit runSweepSummit.sh path and project settings
+$ bsub ./runSweepSummit.sh  
+#the results will be in sweep.<jobid>
+matrix size 1048576
+cublasSgemm time (seconds) 0.115373
+GPU Device 0: "Volta" with compute capability 7.0
+
+simpleCUBLAS test running..
+simpleCUBLAS test passed.
+matrix size 4194304
+cublasSgemm time (seconds) 0.135333
+GPU Device 0: "Volta" with compute capability 7.0
+
+simpleCUBLAS test running..
+simpleCUBLAS test passed (result not checked).
+matrix size 16777216
+cublasSgemm time (seconds) 0.980264
+GPU Device 0: "Volta" with compute capability 7.0
+
+simpleCUBLAS test running..
+simpleCUBLAS test passed (result not checked).
+matrix size 67108864
+cublasSgemm time (seconds) 7.707417
+GPU Device 0: "Volta" with compute capability 7.0
+
+simpleCUBLAS test running..
+simpleCUBLAS test passed (result not checked).
+
+matrix size 268435456
+cublasSgemm time (seconds) 62.548403
+GPU Device 0: "Volta" with compute capability 7.0
+
+simpleCUBLAS test running..
+simpleCUBLAS test passed (result not checked).
+```
+
+
 
 ### Cranium
 
